@@ -90,9 +90,48 @@ In questo esempio, $_GLOBALS['x'] viene utilizzato per accedere e modificare la 
 
 Le variabili superglobali sono messe a disposizione da php e permettono di poter essere lette anche fuori dalla variabile 
 
+---
+
+### Differenza fra define e const
+
+#### Define
+
+La funzione define() viene utilizzata per dichiarare una **costante**. Le costanti sono simili alle variabili ma non possono essere modificate.
+<mark>La particolarità del define è che non viene definito con $ come è tipico delle variabili </mark>
+
+Esempio:
+
+define ('NOME COSTANTE', 'VALORE');
+define ('indirizzo', 'Via del corso')
+
+<mark>Sono variabili accessibili a tutti</mark>
+
+Con define(), è possibile anche impostare costanti per i valori booleani o per il risultato di espressioni di tipo stringa o numerico
+
+### Const
+
+Le costanti dichiarate con const sono simili a quelle dichiarate con define(), ma ci sono delle differenze nel loro utilizzo e nelle regole di dichiarazione.
+const ADDRESS = "via del corso"
+
+**Definizione di costanti:***
+- **define()**: Può essere utilizzato ovunque nel codice, anche all'interno di funzioni e file inclusi.
+
+- **const**: Viene utilizzato per definire costanti a livello globale, ma non può essere usato all'interno di funzioni o all'interno di condizioni (eccetto in classi).
+
+| Caratteristica             | `define()`                               | `const`                              |
+|----------------------------|------------------------------------------|--------------------------------------|
+| **Ambito di dichiarazione**    | Può essere usato ovunque nel codice      | Usato solo in ambito globale o dentro classi |
+| **Dichiara costanti in classi** | No                                       | Sì                                   |
+| **Valore dinamico**             | Sì (può usare funzioni o espressioni)    | No (deve essere un valore fisso)     |
+| **Utilizzo in funzioni**        | Sì                                       | No                                   |
+| **Visibilità**                 | Globale     
 
 
+---
 
+## Var_dump()
+
+Il var_dumpo() ci aiuta a mostrare sullo schermo il tipo di dato 
 
 
 

@@ -39,6 +39,124 @@ Tramite il metodo post mi sto riprendendo i dati
 
 # Sintassi php
 
+- Contatenazionazione fra stringhe con il punto.
+Esempio
+
+ ```php
+
+    echo $stringa .$nome
+    echo $stringa . " " .$nomen ."ciao";
+
+```
+---
+
+# Funzioni su stringhe
+
+## strlen()
+
+Serve per calcolare la lunghezza di una stringa.
+
+ ```php
+    echo strlen($stringa)
+  ```
+
+## strtolower();
+
+Serve per trasfomare una stringa in minuscolo.
+
+ ```php
+    echo strtolower($stringa)
+  ```
+
+## strtoupper();
+
+Serve per trasfomare una stringa in maiuscolo.
+
+```php
+    echo strtoupper($stringa)
+  ```
+
+## trim()
+
+Serve per rimuovere gli spazi bianch inzio o fine che potrebbero darci dei problemi;
+
+```php
+    echo trim($stringa)
+  ```
+
+## str_word_count()
+
+Serve per conteggiare le parole dentro ad una stringa
+
+```php
+    echo str_word_count($stringa)
+  ```
+
+## strrev()
+
+Serve per rovesciare una stringa
+
+```php
+    echo strrev($stringa)
+  ```
+
+## strpos()
+
+Serve cercare una parola in una stringa (ma è case sensitive)
+
+```php
+    echo strpos($stringa , 'ciao')
+  ```
+
+## substr()
+
+Serve per prendere una parte di stringa 
+
+```php
+    echo substr($stringa , 12, 5)
+  ```
+  
+## str_replace ()
+
+Serve per andare a sostituire una parte del testo 
+
+```php
+    echo str_replace('PARAMETRO DA SOSTITUIRE', 'PARAMETRO NUOVO', $stringa)
+    echo str_replace('ciao', 'ipsum', $stringa)
+  ```
+
+##  explode()
+
+Divide una stringa in un array utilizzando un delimitatore.
+
+```php
+    $str = "Ciao mondo PHP";
+    $array = explode(" ", $str);
+    print_r($array);  // Output: Array ( [0] => Ciao [1] => mondo [2] => PHP )
+  ```
+
+##  implode()
+
+Unisce gli elementi di un array in una stringa, utilizzando un delimitatore.
+
+```php
+   $array = ["Ciao", "mondo", "PHP"];
+echo implode(" ", $array);  // Output: Ciao mondo PHP
+  ```
+
+## str_split()
+
+Divide una stringa in un array di caratteri.
+
+```php
+        $str = "Ciao";
+        print_r(str_split($str)); 
+  ```
+## Variabili 
+
+Le variabili di php sono debolmente tipizzate e non richiedono che tu specifichi il tipo di dato di una variabile quando la dichiari. Il tipo di una variabile è determinato automaticamente in base al valore che le assegnate. <br/>
+PHP **effettua una conversione automatica dei tipi (tipo di casting)** quando necessario, ad esempio, quando si confrontano variabili di tipo diverso o si eseguono operazioni tra variabili.
+
 ## 3 tipo di variabili:
 - **Locali**
 
@@ -132,6 +250,12 @@ const ADDRESS = "via del corso"
 ## Var_dump()
 
 Il var_dumpo() ci aiuta a mostrare sullo schermo il tipo di dato 
+
+# Lezione del 01/12/2024
+
+Riprende il corso da [qui](https://www.youtube.com/watch?v=5bQ6y2URNls&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=6&ab_channel=EdoardoMidali)
+
+---
 
 
 

@@ -10,10 +10,10 @@ I pacchetti sono formati da una parte contenente i <mark>dati veri e propri (”
 
 # Internet 
 
-Internet `e essenzialmente una federazione di reti locali (LAN). Le LAN sono collegate tra loro da apparecchi dedicati, i router.
+Internet è essenzialmente una federazione di reti locali (LAN). Le LAN sono collegate tra loro da apparecchi dedicati, i router.
 Per identificare una macchina in Internet viene usato un <mark>Indirizzo IP (Internet Protocol).</mark>
  Ci sono attualmente due standard, **IPv4 e IPv6**.
-<mark> IPv4 usa indirizzi composti di 4 numeri tra 0 e 255, tipo 131.114.10.97
+<mark>IPv4 usa indirizzi composti di 4 numeri tra 0 e 255, tipo 131.114.10.97
 IPv6 usa indirizzi composti da 8 gruppi di 4 cifre esadecimali ciascuno, tipo 2001:760:2c0c:202::97 (cio`e 2001:0760:2c0c:0202:0000:0000:0000:0097)</mark>
 
 

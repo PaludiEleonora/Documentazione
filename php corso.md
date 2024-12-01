@@ -1,7 +1,7 @@
 # Corso php
 ## Premessa
 
-Sto seguendo un [corso di php] (https://www.youtube.com/watch?v=_WeuUdZQBwI&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=2&ab_channel=EdoardoMidali) per approfondire la mia conoscenza.
+Sto seguendo un [corso di php](https://www.youtube.com/watch?v=_WeuUdZQBwI&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=2&ab_channel=EdoardoMidali) per approfondire la mia conoscenza.
 
 Per lavorare in locale sto utilizzando Xamp.
 Per raggiungere il progetto bisogna andare su **localhost** oppure su **127.0.0.1** + la cartella del mio progetto.
@@ -15,48 +15,47 @@ Per raggiungere il progetto bisogna andare su **localhost** oppure su **127.0.0.
 
 Nella nostra pagina html abbiamo creato un piccolo form come riportato qua sotto :
 
-<pre>
-  <code>
+```html
      <form method ="POST" action="esempio.php">
         <label for ="nome">Nome</label>
         <input type ="text" id ="nome" name ="nome">
         <input type="submit" value="invia dati">
     </form>
-    </code>
-</pre>
+```
 
-Come possiamo notare:
+### Come possiamo notare:
 
-Il <mark>metodo POST</mark> è stato usato per i nostri dati sensibili
+Il <mark>**metodo POST**</mark> è stato usato per i nostri dati sensibili <br/>
 <mark>Action</mark> esempio.php è dove riporta i dati il form (infatti ho creato una pagina chiamata esempio.php)
 
-Nella pagina di esempio php :
+### Nella pagina di esempio php :
 ```php 
      echo "Ciao " . $_POST['nome'];
-Tramite il metodo post mi sto riprendendo i dati 
 ```
+
+Tramite il metodo post mi sto riprendendo i dati 
+
 ---
 
 # Sintassi php
 
-Variabili
-
 ## 3 tipo di variabili:
--Locali 
+- **Locali**
 
--Globali
+- **Globali**
 
--Super Globali
+- **Super Globali**
 
-> Variabili SUPER GLOBALI es $_POST ==> variabili messe a disposizione da php 
+> **Variabili SUPER GLOBALI es $_POST ==> variabili messe a disposizione da php**
 
 ## Definizione delle VARIABILI SUPER GLOBALI 
 
-In PHP, le variabili dichiarate all'esterno delle funzioni sono globali, ma se vuoi accedere a queste variabili all'interno di una funzione, normalmente dovresti usare la parola chiave global o passare la variabile come parametro. Tuttavia, $_GLOBALS ti permette di accedere a tutte le variabili globali senza bisogno di dichiararle come global dentro le funzioni.
+In PHP, le <mark>variabili dichiarate all'esterno delle funzioni sono globali, ma se vuoi accedere a queste variabili all'interno di una funzione, normalmente dovresti usare la parola chiave global o passare la variabile come parametro. Tuttavia, $_GLOBALS ti permette di accedere a tutte le variabili globali senza bisogno di dichiararle come global dentro le funzioni</mark>.
 
-Struttura di $_GLOBALS: $_GLOBALS è un array associativo che mappa il nome della variabile (come stringa) al suo valore.
+<mark>**$_GLOBALS è un array associativo che mappa il nome della variabile (come stringa) al suo valore**</mark>.
 
 ```php 
+
 <?php
 $a = 10;  // Variabile globale
 
@@ -86,6 +85,12 @@ incrementa();
 echo $x;  // Stampa 6
 ?>
 In questo esempio, $_GLOBALS['x'] viene utilizzato per accedere e modificare la variabile globale $x all'interno della funzione.
+
+### Riassunto
+
+Le variabili superglobali sono messe a disposizione da php e permettono di poter essere lette anche fuori dalla variabile 
+
+
 
 
 

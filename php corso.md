@@ -190,8 +190,6 @@ In questo esempio, la variabile $a è definita a livello globale, e la funzione 
 Modificare una variabile globale tramite $_GLOBALS:
 Puoi anche utilizzare $_GLOBALS per modificare il valore di una variabile globale all'interno di una funzione:
 
-php
-Copia codice
 <?php
 $x = 5;  // Variabile globale
 
@@ -249,13 +247,141 @@ const ADDRESS = "via del corso"
 
 ## Var_dump()
 
-Il var_dumpo() ci aiuta a mostrare sullo schermo il tipo di dato 
+Il var_dump() ci aiuta a mostrare sullo schermo il tipo di dato 
+Può essere utilizzato anche per capire se un numero è intero o no tipo var_dump(is_float($numero )) o var_dump(is_int())
+
+## print_r()
+
+print_r() è una funzione in PHP utilizzata per stampare in modo leggibile il contenuto di una variabile, in particolare per esaminare il contenuto di array o oggetti. È molto utile durante il debugging per vedere come sono strutturati i dati.
 
 # Lezione del 01/12/2024
 
 Riprende il corso da [qui](https://www.youtube.com/watch?v=5bQ6y2URNls&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=6&ab_channel=EdoardoMidali)
 
 ---
+# Lezione del 02/12/2024
+
+# Array
+Array è una collezione di elementi.
+
+Dichiarare un array:
+
+``` php 
+
+$citta = array('milano','roma')
+$citta = ['roma','Milano']
+
+for($i= 0; $i < count($citta); i++){
+  echo $citta[i]
+}
+
+```
+## metodi sort() e rsort()
+Metodo per ordinare un array
+
+**sort()** in ordine crescente 
+
+**rsort** è reverse sort
+
+``` php 
+
+sort($citta)
+
+```
+
+# Array associativi
+
+Un array associativo in PHP è una <mark>struttura dati che consente di memorizzare valori associandoli a chiavi personalizzate</mark>, invece di utilizzare solo indici numerici come negli array normali. È particolarmente utile per rappresentare coppie chiave-valore.
+
+Serve per :
+
+- Rappresentare dati strutturati
+- Rendere il codice più leggibile
+- Mappare valori
+
+Esempio di array associativo 
+
+``` php  
+
+$persona = [
+  "nome" = "Eleonora",
+  "età" = 23
+]
+$echo $persona ["nome"]
+
+```
+
+## loop foreach
+
+Il costrutto foreach è <mark>utilizzato per iterare su tutti gli elementi di un array (sia indicizzati che associativi)</mark>. Con un array associativo, il foreach permette di accedere sia alla chiave che al valore di ogni elemento.
 
 
+``` php 
 
+foreach ($array as $chiave => $valore) {
+    // Codice che utilizza $chiave e $valore
+}
+
+$persona = [
+    "nome" => "Mario",
+    "cognome" => "Rossi",
+    "età" => 30
+];
+
+foreach ($persona as $chiave => $valore) {
+    echo "La chiave è $chiave e il valore è $valore\n";
+}
+
+```
+
+# Array multidimensionali 
+
+Un array multidimensionale è essenzialmente un array all'interno di un altro array. Ogni elemento può essere un array numerico, un array associativo o una combinazione di entrambi.
+
+## Metodi per ordinare Arry associativi per chiave k => chiave 
+
+ksort() in ordine crescente 
+krsort è reverse sort
+
+## Metodi per ordinare Arry associativi per chiave a => valore
+
+ksort() in ordine crescente 
+krsort è reverse sort
+
+# array_push() array_pop() array_unchift() array_shift()
+
+array_push() ($citta, 'Napoli') ==> inserito nuovo elemento
+
+array_pop($citta) ==> togliere ultimo elemento 
+
+array_unshift() ($citta, 'Napoli') ==> aggiunge un elemento in avanti 
+ 
+array_shift() ==> toglie il primo elemento 
+
+---
+
+# Funzioni
+
+Le funzioni sono un blocco di codice riutilizzabili nel tempo. Possiamo creare delle funzioni anonime. Le variabili all'interno di una funzione valgono solo dentro alla funzione. il modo per richiamare una variabile anche fuori è $GLOBALS['numero']. Però non è consigliato. Bisogna utilizzare return.
+dentro le parentesi tonde vanne messi degli argomenti. Sarebbe meglio tipizzare le funzioni
+
+``` php  
+$prova = function(){
+  echo 'ciao';
+}
+
+$prova();
+
+function somma(int $valore1, int $valore2 ): inte{
+  $somma = $valore1 + $valore2;
+  return $somma;
+}
+
+echo $somma
+```
+
+tipizzando così i valori il return potrebbe dare qualche errore più specifico
+
+
+Riprende il corso da [qui](https://www.youtube.com/watch?v=zeCA3XHt-mo&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=12&ab_channel=EdoardoMidali)
+---

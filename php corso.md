@@ -540,7 +540,7 @@ I modificatori sono aggiunti dopo il delimitatore di chiusura (/) per modificare
 | `\`           | Carattere di escape per specificare caratteri speciali. Es.: `\.` corrisponde a un punto reale. |
 
 
-Ritornare [Qui] (https://www.youtube.com/watch?v=nkWMaGB6TTY&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=14&ab_channel=EdoardoMidali)
+Ritornare [Qui](https://www.youtube.com/watch?v=nkWMaGB6TTY&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=14&ab_channel=EdoardoMidali)
 
 ---
 

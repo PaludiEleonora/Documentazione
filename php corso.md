@@ -385,3 +385,76 @@ tipizzando così i valori il return potrebbe dare qualche errore più specifico
 
 Riprende il corso da [qui](https://www.youtube.com/watch?v=zeCA3XHt-mo&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=12&ab_channel=EdoardoMidali)
 ---
+
+# DATE 
+Le date si basano tutti da **"UNIX Timestamp"** che è una unità di misura universale e che parte dal <mark>"1 Gennaio 1970 00:00:00"</mark>.
+Tutti i computer hanno all'interno questa data ed infatti tramide **DATE()** puoi calcolare la quantità dei secondi passati da quella data.
+
+## DATE()
+Esempio di utilizzo di DATE();
+
+``` php 
+$data = date('d-m-Y' , 0);
+echo $data 
+```
+Con echo darà 1970 (da dove tutto è partito)
+
+## Legenda per il formato della data
+
+d - Numero del giorno
+D - Nome giorno abbreviato 
+l - Nome completo
+m - Numero del mese 
+M - Nome del mese 
+y - Anno con due cifre finali
+Y - Anno con 4 cifre
+
+## Legenda per il formato del tempo 
+
+h - Ore in formato da 12(anglosassone) quindi serve l'aggiunta di **am e pm**
+H - Ore in formato da 24( le nostre). ESEMPIO date('h:i:sa')
+i - Minuti
+s - Secondi
+a - Am e pm in minuscolo
+A - Am e ph in maiuscolo 
+
+# TIMESTAMP CORRENTE
+
+## time() per ottenere il tempo corrente 
+
+``` php 
+
+$data = date('d-m-Y H:i:s' , time());
+
+echo $data;
+
+```
+
+## mktime()  per ottenere timestamp da una data 
+
+``` php
+$data = mktime( 14, 49, 00, 12, 09, 2024);
+
+``` 
+Se fai a fare un echo è un timestamp da oggi 
+
+## strtotime()
+
+Passa dalla stringa al tempo
+
+ ``` php
+
+$data = strtotime('09-12-2024')
+
+$data = date('d-m-Y, strtotime("now" +7 days"));
+
+ ```
+
+
+
+
+
+
+
+
+

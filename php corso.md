@@ -446,9 +446,105 @@ Passa dalla stringa al tempo
 
 $data = strtotime('09-12-2024')
 
-$data = date('d-m-Y, strtotime("now" +7 days"));
+$data = date('d-m-Y', strtotime("now" +7 days"));
 
  ```
+
+# INCLUDERE FILE PHP
+
+## REQUIRE() 
+Inserire un file con require() significa che il file deve essere obbligatoriamente richiamato.
+
+<?php
+
+require('esempio.php');
+
+?>
+
+ ## INCLUDE() 
+
+ Con include invece il file verrà cercato ma se non è presente non è problema
+
+
+<?php
+
+include('esempio.php');
+
+?>
+
+---
+
+#REGEX
+REGULAR EXPRESSION 
+
+Le regex (espressioni regolari) in PHP sono uno strumento potente per la ricerca, il confronto e la manipolazione di stringhe. Puoi usarle per verificare se una stringa soddisfa un certo schema, estrarre informazioni o fare sostituzioni.
+
+## Caratteri speciali 
+Questi sono i caratteri speciali principali usati nelle regex:
+
+
+
+| **Carattere** | **Significato**                                                                 |
+|---------------|---------------------------------------------------------------------------------|
+| `.`           | Qualsiasi carattere eccetto una nuova riga.                                     |
+| `^`           | Inizio della stringa (o inizio di una linea in modalità multilinea).            |
+| `$`           | Fine della stringa (o fine di una linea in modalità multilinea).                |
+| `*`           | Zero o più ripetizioni dell'elemento precedente.                                |
+| `+`           | Una o più ripetizioni dell'elemento precedente.                                 |
+| `?`           | Zero o una ripetizione dell'elemento precedente.                                |
+| `{n}`         | Esattamente `n` ripetizioni dell'elemento precedente.                           |
+| `{n,}`        | Almeno `n` ripetizioni.                                                        |
+| `{n,m}`       | Tra `n` e `m` ripetizioni.                                                     |
+| `[]`          | Definisce una classe di caratteri. Es.: `[a-z]` indica un intervallo di lettere minuscole. |
+| `()`          | Raggruppamento e cattura.                                                      |
+| `\`           | Carattere di escape per specificare caratteri speciali. Es.: `\.` corrisponde a un punto reale. |
+
+## preg_match
+Cerca una corrispondenza con la regex in una stringa.
+
+## preg_match_all
+
+Cerca **tutte** le corrispondenze.
+
+## preg_replace
+
+Sostituisce le corrispondenze trovate.
+
+## preg_split
+Divide una stringa in base a uno schema.
+
+Esempio 
+
+$pattern = '/\d+/'; // Cerca uno o più numeri.
+$string = 'Oggi è il 9 dicembre 2024';
+if (preg_match($pattern, $string, $matches)) {
+    echo "Trovato: " . $matches[0]; // Restituisce la prima corrispondenza.
+}
+
+## Modificatori delle regex
+I modificatori sono aggiunti dopo il delimitatore di chiusura (/) per modificare il comportamento della regex.
+
+| **Carattere** | **Significato**                                                                 |
+|---------------|---------------------------------------------------------------------------------|
+| `.`           | Qualsiasi carattere eccetto una nuova riga.                                     |
+| `^`           | Inizio della stringa (o inizio di una linea in modalità multilinea).            |
+| `$`           | Fine della stringa (o fine di una linea in modalità multilinea).                |
+| `*`           | Zero o più ripetizioni dell'elemento precedente.                                |
+| `+`           | Una o più ripetizioni dell'elemento precedente.                                 |
+| `?`           | Zero o una ripetizione dell'elemento precedente.                                |
+| `{n}`         | Esattamente `n` ripetizioni dell'elemento precedente.                           |
+| `{n,}`        | Almeno `n` ripetizioni.                                                        |
+| `{n,m}`       | Tra `n` e `m` ripetizioni.                                                     |
+| `[]`          | Definisce una classe di caratteri. Es.: `[a-z]` indica un intervallo di lettere minuscole. |
+| `()`          | Raggruppamento e cattura.                                                      |
+| `\`           | Carattere di escape per specificare caratteri speciali. Es.: `\.` corrisponde a un punto reale. |
+
+
+Ritornare [Qui] (https://www.youtube.com/watch?v=nkWMaGB6TTY&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=14&ab_channel=EdoardoMidali)
+
+---
+
+
 
 
 

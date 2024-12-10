@@ -485,10 +485,45 @@ REGULAR EXPRESSION
 
 Le regex (espressioni regolari) in PHP sono uno strumento potente per la ricerca, il confronto e la manipolazione di stringhe. Puoi usarle per verificare se una stringa soddisfa un certo schema, estrarre informazioni o fare sostituzioni.
 
+## Sintassi 
+. * + [] () {} ^ $ | \
+
+[] ==> classi di caratteri che vogliamo trovare 
+[^] ==> classe di caratteri negato 
+
+[a-z] ==> creare un pattern /tutti i caratteri minuscoli dalla a alla z
+[A-Z] ==> Tutti i caratteri maiuscoli
+[a-Z] ==> Tutti i caratteri sia in maiuscolo che in minuscolo
+[0-9] ==> tutti i numeri dallo 0 al 9
+[a-z0-9] ==> Tutti i caratteri non speciali
+
+## Classe predefinite 
+\d ==> Shortcut da [0-9]
+\D ==> S. nega da [0-9]
+\s ==> S. toglie tab, newline, spazi
+\w ==> S. prende tutti i caratteri
+|W ==> S. nega tutti i caratteri 
+
+
+## Quantificatori 
+Permettono di moltiplicare i caratteri che stiamo guardando
+
+p+ ==> ona o più p
+p* ==> zero o più occorrenze della lettera p
+p? 0 o una
+p{2} Esattamente
+p{2,3} almeno due p max 3
+p{,3} Massimo  3
+
+## Ancora
+
+Ci aiuta a capire se è all'inizio o alla fine della frase
+
+^p all'inzio
+p$ alla fine
+
 ## Caratteri speciali 
 Questi sono i caratteri speciali principali usati nelle regex:
-
-
 
 | **Carattere** | **Significato**                                                                 |
 |---------------|---------------------------------------------------------------------------------|
@@ -505,12 +540,20 @@ Questi sono i caratteri speciali principali usati nelle regex:
 | `()`          | Raggruppamento e cattura.                                                      |
 | `\`           | Carattere di escape per specificare caratteri speciali. Es.: `\.` corrisponde a un punto reale. |
 
+
 ## preg_match
 Cerca una corrispondenza con la regex in una stringa.
 
 ## preg_match_all
 
 Cerca **tutte** le corrispondenze.
+
+ESEMPIO
+
+$testo = "Oggi è una bella giornata"
+$pattern = "/è/";
+$matches = preg_match_all($pattern, $testo, $array);
+echo $matches . "match che sono stati trovati.";
 
 ## preg_replace
 
@@ -525,6 +568,18 @@ $pattern = '/\d+/'; // Cerca uno o più numeri.
 $string = 'Oggi è il 9 dicembre 2024';
 if (preg_match($pattern, $string, $matches)) {
     echo "Trovato: " . $matches[0]; // Restituisce la prima corrispondenza.
+}
+
+## preg_grep()
+
+i ==> modificatore regex ( case sesitive)
+
+$pattern = "/^M/i";
+$names = array["Marco Rossi", "Giovanni Allevi"];
+$matches =preg_grep($pattern, $names);
+
+foreach($matches as $match){
+  echo $match . <"br">
 }
 
 ## Modificatori delle regex
@@ -550,6 +605,47 @@ Ritornare [Qui](https://www.youtube.com/watch?v=nkWMaGB6TTY&list=PLP5MAKLy8lP_zq
 
 ---
 
+
+# METODO GET E METODO POST
+
+## POST
+
+Il metodo POST serve per trasmettere delle informazioni sensibili.
+
+esempio 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $nome = htmlspecialchars($_POST['nome']);
+    $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
+    if (preg_match($regex, $nome)){
+  echo('Indirizzo email valido');}
+else{
+  echo('Indirizzo email non valido');}
+}
+
+<form method="POST" action="">
+<input type="text" id="nome" name="nome">
+<input type ="submit" value ="ok" id="bottone">
+</form>
+
+Questo non comparirà a schermo
+
+## GET
+
+Il metodo get serve per stampare informazioni nell'url quindi informazioni che non hanno problemi se vengono trovare.
+
+ESEMPIO
+
+$nomeBat =isset($_GET['nomebat']);
+$cognome = isset($_GET['cognome']);
+
+echo $nomeBat . $cognome;
+
+<form method="GET" action="">
+    <input type="text" id="nomebat" name ="nomebat">
+    <input type="text" id="cognome" name="cognome">
+    <input type="submit" value="invia">
+</form>
 
 
 

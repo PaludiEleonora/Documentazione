@@ -10,43 +10,19 @@ Per raggiungere il progetto bisogna andare su **localhost** oppure su **127.0.0.
 
 ---
 
-## Primo esercizio di php 
-
-Nella nostra pagina html abbiamo creato un piccolo form come riportato qua sotto :
-
-```html 
-     <form method ="POST" action="esempio.php">
-        <label for ="nome">Nome</label>
-        <input type ="text" id ="nome" name ="nome">
-        <input type="submit" value="invia dati">
-    </form>
-```
-
-### Come possiamo notare:
-
-Il <mark>**metodo POST**</mark> è stato usato per i nostri dati sensibili <br/>
-<mark>Action</mark> esempio.php è dove riporta i dati il form (infatti ho creato una pagina chiamata esempio.php)
-
-### Nella pagina di esempio php :
-```php 
-     echo "Ciao " . $_POST['nome'];
-```
-
-Tramite il metodo post mi sto riprendendo i dati 
-
----
-
 # Sintassi php
-
-- Contatenazionazione fra stringhe con il punto.
-Esempio
-
+<?php apertura
+<?= Apertura con echo abbreviato
+echo mostra output (1 o +)
+print mostra output (1). Print restituisce 1  
+- Contatenazionazione 
  ```php
 
-    echo $stringa .$nome
-    echo $stringa . " " .$nomen ."ciao";
+    echo $stringa . $nome
+    echo $stringa . " " .$nome ."ciao";
 
 ```
+
 ---
 
 # Funzioni su stringhe
@@ -77,7 +53,7 @@ Serve per trasfomare una stringa in maiuscolo.
 
 ## trim()
 
-Serve per rimuovere gli spazi bianch inzio o fine che potrebbero darci dei problemi;
+Serve per rimuovere gli spazi bianchi inzio o fine che potrebbero darci dei problemi;
 
 ```php
     echo trim($stringa)

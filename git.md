@@ -110,7 +110,7 @@ Comandi per il branch:
 Passaggi di un merge standard
 
 -	Posizionati nel ramo in cui vuoi fare il merge: Se vuoi unire sviluppo in main, devi trovarti nel ramo main:
-git merge sviluppo  Per mergiare sviluppo con main 
+git merge sviluppo . Per mergiare sviluppo con main 
 Gestisci eventuali conflitti (se ci sono): Se non ci sono conflitti, Git completerà automaticamente il merge e creerà un commit. Se ci sono conflitti, Git mostrerà messaggi simili a:
 Auto-merging file.txt
 
@@ -126,22 +126,21 @@ git commit
 # Tipi di merge
 
 ## Fast-forward merge.
-    Si verifica quando il ramo di destinazione (es. main) non ha nuovi commit rispetto al ramo che vuoi unire.
-    Git "avanza" semplicemente il puntatore del ramo di destinazione.Git merge sviluppo.
-    Git non crea un commit di merge separato; il risultato sembra che i commit del ramo unito siano stati fatti direttamente nel ramo principale.
+Si verifica quando il ramo di destinazione (es. main) non ha nuovi commit rispetto al ramo che vuoi unire.
+Git "avanza" semplicemente il puntatore del ramo di destinazione.Git merge sviluppo.
+Git non crea un commit di merge separato; il risultato sembra che i commit del ramo unito siano stati fatti direttamente nel ramo principale.
 
 ## Merge standard (3-way merge)
-    Si verifica quando entrambi i rami hanno nuovi commit.
-    Git combina i due rami e crea un nuovo commit di merge.
-    Squash merge
-    Combina tutti i commit di un ramo in un unico commit prima di unirlo al ramo principale.
-    Non tiene traccia della cronologia completa del ramo unito.
-
-    git merge --squash sviluppo
-    git commit -m "Unito ramo sviluppo"
+Si verifica quando entrambi i rami hanno nuovi commit.
+Git combina i due rami e crea un nuovo commit di merge.
+Squash merge
+Combina tutti i commit di un ramo in un unico commit prima di unirlo al ramo principale.
+Non tiene traccia della cronologia completa del ramo unito.
+git merge --squash sviluppo
+git commit -m "Unito ramo sviluppo"
 
 ## Merge senza commit automatico
-	A volte, potresti voler controllare il commit del merge manualmente.
+A volte, potresti voler controllare il commit del merge manualmente.
 
 **git merge --no-commit sviluppo** ==> Merge senza commento 
 

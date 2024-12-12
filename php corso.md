@@ -10,26 +10,6 @@ Per raggiungere il progetto bisogna andare su **localhost** oppure su **127.0.0.
 
 ---
 
-# Sintassi php
-
-<?php apertura
-<?= Apertura con echo abbreviato
-
-echo mostra output (1 o +)
-
-print mostra output (1). Print restituisce 1  
-
-- Contatenazionazione 
-
- ```php
-
-    echo $stringa . $nome
-    echo $stringa . " " .$nome ."ciao";
-
-```
-
----
-
 # Funzioni su stringhe
 
 ## strlen()

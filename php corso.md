@@ -1,4 +1,5 @@
 # Corso php
+
 ## Premessa
 [corso di php](https://www.youtube.com/watch?v=_WeuUdZQBwI&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=2&ab_channel=EdoardoMidali).
 
@@ -7,6 +8,23 @@ Per raggiungere il progetto bisogna andare su **localhost** oppure su **127.0.0.
 
  > Piccola Nozione :
  > Per inserire la struttura base di html su visual studio ==> ! + tabs
+
+---
+
+# Sintassi php
+
+echo ==> mostra output (1 o +)
+
+print ==> mostra output (1). Print restituisce 1  
+
+- Contatenazionazione 
+
+ ```php
+
+    echo $stringa . $nome
+    echo $stringa . " " .$nome ."ciao";
+
+```
 
 ---
 
@@ -90,10 +108,11 @@ Serve per andare a sostituire una parte del testo
 Divide una stringa in un array utilizzando un delimitatore.
 
 ```php
+
     $str = "Ciao mondo PHP";
     $array = explode(" ", $str);
-    print_r($array);  // Output: Array ( [0] => Ciao [1] => mondo [2] => PHP )
-  ```
+    print_r($array);
+```
 
 ##  implode()
 
@@ -116,10 +135,12 @@ Divide una stringa in un array di caratteri.
 
 ## Variabili 
 
-Le variabili di php sono **debolmente tipizzate e non richiedono che tu specifichi il tipo di dato** di una variabile quando la dichiari. Il tipo di una variabile è determinato automaticamente in base al valore che le assegnate. <br/>
+Le variabili di php sono **debolmente tipizzate e non richiedono che tu specifichi il tipo di dato** di una variabile quando la dichiari.
+Il tipo di una variabile è determinato automaticamente in base al valore che le assegnate. <br/>
 PHP **effettua una conversione automatica dei tipi (tipo di casting)** quando necessario, ad esempio, quando si confrontano variabili di tipo diverso o si eseguono operazioni tra variabili.
 
 ## 3 tipo di variabili:
+
 - **Locali**
 
 - **Globali**
@@ -422,23 +443,24 @@ $data = date('d-m-Y', strtotime("now" +7 days"));
 ## REQUIRE() 
 Inserire un file con require() significa che il file deve essere obbligatoriamente richiamato.
 
+ ```php
 <?php
 
 require('esempio.php');
 
 ?>
+ ```
 
  ## INCLUDE() 
-
  Con include invece il file verrà cercato ma se non è presente non è problema
 
-
+ ```php
 <?php
 
 include('esempio.php');
 
 ?>
-
+ ```
 ---
 
 #REGEX
@@ -510,11 +532,12 @@ Cerca una corrispondenza con la regex in una stringa.
 Cerca **tutte** le corrispondenze.
 
 ESEMPIO
-
+ ```php
 $testo = "Oggi è una bella giornata"
 $pattern = "/è/";
 $matches = preg_match_all($pattern, $testo, $array);
 echo $matches . "match che sono stati trovati.";
+ ```
 
 ## preg_replace
 
@@ -524,15 +547,16 @@ Sostituisce le corrispondenze trovate.
 Divide una stringa in base a uno schema.
 
 Esempio 
-
+ ```php
 $pattern = '/\d+/'; // Cerca uno o più numeri.
 $string = 'Oggi è il 9 dicembre 2024';
 if (preg_match($pattern, $string, $matches)) {
     echo "Trovato: " . $matches[0]; // Restituisce la prima corrispondenza.
 }
-
+ ```
 ## preg_grep()
 
+ ```php
 i ==> modificatore regex ( case sesitive)
 
 $pattern = "/^M/i";
@@ -542,6 +566,7 @@ $matches =preg_grep($pattern, $names);
 foreach($matches as $match){
   echo $match . <"br">
 }
+ ```
 
 ## Modificatori delle regex
 I modificatori sono aggiunti dopo il delimitatore di chiusura (/) per modificare il comportamento della regex.
@@ -572,8 +597,10 @@ Ritornare [Qui](https://www.youtube.com/watch?v=nkWMaGB6TTY&list=PLP5MAKLy8lP_zq
 ## POST
 
 Il metodo POST serve per trasmettere delle informazioni sensibili.
-
+> Nel form prende name
 esempio 
+
+ ```php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $nome = htmlspecialchars($_POST['nome']);
@@ -588,6 +615,7 @@ else{
 <input type="text" id="nome" name="nome">
 <input type ="submit" value ="ok" id="bottone">
 </form>
+ ```
 
 Questo non comparirà a schermo
 
@@ -597,6 +625,7 @@ Il metodo get serve per stampare informazioni nell'url quindi informazioni che n
 
 ESEMPIO
 
+ ```php
 $nomeBat =isset($_GET['nomebat']);
 $cognome = isset($_GET['cognome']);
 
@@ -607,11 +636,54 @@ echo $nomeBat . $cognome;
     <input type="text" id="cognome" name="cognome">
     <input type="submit" value="invia">
 </form>
+ ```
+---
+
+# Lavorare con i file
+
+fopen ==> Aprire un file 
+
+## Modalità di apertura
+
+r ==> Leggere
+
+r+ ==> Leggere e scrivere 
+
+w ==> Scrivere ( ma va a pulire il file e scrivere la parte nuova) 
+
+w+ ==> leggere e scrivere 
+
+a ==> Append (attaccca sotto. Se non trova il file lo crea)
+
+a+ ==> append più read ==> preserva il contenuto ma se non lo trova lo cerca di trovare
+
+x => solo scrive ci da un errore se va a scrivere ( controllo se esiste sennò errre)
+
+x+ ==> + read 
 
 
+fread ==> Aprire il file
+
+fread ($file, "20") ==> prende le prime 20 lettere
+
+fread ($file, filesize($nomeFile))
+
+file_get_contents($nomeFile)
+
+file_put_contents ($nomeFile, $testo)
+
+fwrite ==> Per scrivere sopra. Ma non legge il file
+
+rename($nomeFile, "nome_nuovo.txt") ==> Rinomina il file 
+
+unlink($nomeFile) ==>  Eliminare un file con unlink 
 
 
+# Gestire Cartella
 
+mkdir = Creazione Cartella 
+
+Riprende il corso da [qui](https://www.youtube.com/watch?v=2ydO5IvUoT0&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=17&ab_channel=EdoardoMidali)
 
 
 

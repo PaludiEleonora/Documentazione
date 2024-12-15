@@ -13,9 +13,13 @@ Per raggiungere il progetto bisogna andare su **localhost** oppure su **127.0.0.
 
 # Sintassi php
 
-echo ==> mostra output (1 o +)
+echo ==> Mostra output (1 o +)
 
-print ==> mostra output (1). Print restituisce 1  
+print ==> Mostra output (1). Print restituisce 1  
+
+isset ==> Sarebbe If set => Serve per sapere se è stato settato qualcosa
+
+$_SERVER['PHP_SELF'] ==> ricarica la pagina php
 
 - Contatenazionazione 
 
@@ -681,9 +685,43 @@ unlink($nomeFile) ==>  Eliminare un file con unlink
 
 # Gestire Cartella
 
+Approfondire il discorso.
+Ho saltato lezione 17 e lezione 18
+
 mkdir = Creazione Cartella 
 
 Riprende il corso da [qui](https://www.youtube.com/watch?v=2ydO5IvUoT0&list=PLP5MAKLy8lP_zqdyjNaPjh95NG40Op8he&index=17&ab_channel=EdoardoMidali)
+
+# Cosa sono i Cookie
+
+File di testo che vengono salvati sul pc dell'utente. Dati non sensibili
+
+setcookie("username" , "Luca", time()+60*60*24*30); ==> Creare un cookie;
+
+name ==> nome del cookie
+
+value ==> Valore del cookie (Esempio Luca)
+
+path ==> Dove sarà dispoibile
+
+# Sessioni 
+
+Sono comparazioni con i cookie
+
+
+session_start();
+
+$_SESSION["user_id"] = 23;
+
+echo $_SESSION["user_id"] ;
+
+unset($_SESSION["user_id"]);
+
+session_destroy();
+
+# JSON
+
+
 
 
 

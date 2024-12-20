@@ -31,45 +31,47 @@ id	nome	email
 
 **Colonne (Campi)**: Ogni colonna in una tabella rappresenta un attributo o una proprietà di un'entità. Ad esempio, la colonna "nome" contiene il nome del cliente, la colonna "email" contiene l'indirizzo email.
 
-Chiave primaria (Primary Key): La chiave primaria è un campo (o una combinazione di campi) che identifica in modo univoco ogni record in una tabella. Ad esempio, nella tabella "Clienti", id potrebbe essere la chiave primaria, perché ogni cliente ha un ID unico.
+**Chiave primaria (Primary Key)**: La chiave primaria è un campo (o una combinazione di campi) che identifica in modo univoco ogni record in una tabella. Ad esempio, nella tabella "Clienti", id potrebbe essere la chiave primaria, perché ogni cliente ha un ID unico.
 
-Chiave esterna (Foreign Key): Una chiave esterna è un campo in una tabella che crea una relazione con la chiave primaria di un'altra tabella. Questo permette di stabilire una relazione tra i dati di due tabelle. Ad esempio, se avessimo una tabella "Ordini" che fa riferimento alla tabella "Clienti", il campo "id_cliente" nella tabella "Ordini" sarebbe una chiave esterna che punta alla chiave primaria "id" della tabella "Clienti".
+**Chiave esterna (Foreign Key):** Una chiave esterna è un campo in una tabella che crea una relazione con la chiave primaria di un'altra tabella. Questo permette di stabilire una relazione tra i dati di due tabelle. Ad esempio, se avessimo una tabella "Ordini" che fa riferimento alla tabella "Clienti", il campo "id_cliente" nella tabella "Ordini" sarebbe una chiave esterna che punta alla chiave primaria "id" della tabella "Clienti".
 
-Indici: Gli indici sono strutture di dati che migliorano la velocità delle operazioni di ricerca su una tabella. Gli indici permettono di trovare rapidamente i dati, riducendo il tempo necessario per le operazioni di lettura (query).
+**Indici:** Gli indici sono strutture di dati che migliorano la velocità delle operazioni di ricerca su una tabella. Gli indici permettono di trovare rapidamente i dati, riducendo il tempo necessario per le operazioni di lettura (query).
 
 Query SQL (Structured Query Language): Il SQL è il linguaggio utilizzato per interagire con i database relazionali. Le query SQL permettono di creare, leggere, aggiornare e cancellare dati (operazioni CRUD). Alcuni esempi di query:
 
-SELECT: Recupera dati da una tabella.
 
-sql
-Copia codice
 SELECT * FROM Clienti WHERE nome = 'Mario';
 INSERT: Inserisce nuovi dati in una tabella.
 
-sql
-Copia codice
 INSERT INTO Clienti (id, nome, email) VALUES (1, 'Mario', 'mario@email.com');
 UPDATE: Modifica i dati esistenti in una tabella.
 
-sql
-Copia codice
 UPDATE Clienti SET email = 'mario.new@email.com' WHERE id = 1;
 DELETE: Elimina dati da una tabella.
 
-sql
-Copia codice
 DELETE FROM Clienti WHERE id = 1;
+
+---
+
 Normalizzazione del Database
 La normalizzazione è il processo di organizzazione dei dati in modo da ridurre la ridondanza e migliorare l'integrità dei dati. Ci sono diverse "forme normali", che sono regole per strutturare i dati in modo efficace. La normalizzazione porta alla creazione di tabelle separate per categorie di dati simili e alla definizione di chiavi esterne per collegarle.
 
-Transazioni
+---
+
+# Transazioni
+
 Una transazione è un insieme di operazioni che vengono eseguite come un'unità atomica, il che significa che o tutte le operazioni hanno successo o nessuna di esse viene eseguita. Le transazioni sono particolarmente utili per garantire la consistenza dei dati in caso di errori o interruzioni. Le transazioni supportano i seguenti principi, noti come ACID:
 
-Atomicità: Tutte le operazioni della transazione sono completate o nessuna lo è.
-Coerenza: Il database passa da uno stato coerente a un altro stato coerente.
-Isolamento: Le operazioni di una transazione non sono visibili ad altre transazioni fino a quando non sono completate.
-Durabilità: I cambiamenti apportati dal completamento di una transazione sono permanenti.
-Tipi di Database NoSQL
+- Atomicità: Tutte le operazioni della transazione sono completate o nessuna lo è.
+
+- Coerenza: Il database passa da uno stato coerente a un altro stato coerente.
+
+- Isolamento: Le operazioni di una transazione non sono visibili ad altre transazioni fino a quando non sono completate.
+
+- Durabilità: I cambiamenti apportati dal completamento di una transazione sono permanenti.
+
+# Tipi di Database NoSQL
+
 Document-oriented: Memorizzano dati in documenti (tipicamente in formato JSON o BSON). Ogni documento è una collezione di coppie chiave-valore. MongoDB è un esempio di database document-oriented.
 
 Key-Value: Memorizzano i dati come una coppia chiave-valore. Un esempio famoso è Redis.
@@ -78,18 +80,197 @@ Column-family: Memorizzano i dati in colonne anziché righe. Ogni "famiglia di c
 
 Graph: Memorizzano i dati come nodi, archi e proprietà, ideali per modellare relazioni complesse. Neo4j è un esempio di database grafico.
 
-Backup e Ripristino
+---
+
+## Backup e Ripristino
 I backup sono essenziali per proteggere i dati da guasti o errori. Un database può essere eseguito in modalità di backup per creare una copia dei suoi dati e recuperare i dati in caso di problemi. Esistono diverse tecniche di backup:
 
-Backup completo: Copia l'intero database.
-Backup incrementale: Copia solo i dati modificati dall'ultimo backup.
+- Backup completo: Copia l'intero database.
+- Backup incrementale: Copia solo i dati modificati dall'ultimo backup.
 Ottimizzazione delle Prestazioni
 L'ottimizzazione del database è cruciale per garantire che le operazioni sui dati siano rapide ed efficienti. Alcune tecniche di ottimizzazione includono:
 
-Indicizzazione: Come già menzionato, gli indici possono velocizzare le query.
-Sharding: Distribuire i dati su più server per migliorare la scalabilità.
-Query optimization: Scrivere query SQL efficienti per ridurre i tempi di esecuzione.
-Conclusioni
-I database sono fondamentali per la gestione e l'archiviazione dei dati. I database relazionali sono molto utilizzati per gestire dati strutturati, mentre i database NoSQL sono ottimizzati per gestire grandi quantità di dati non strutturati. Indipendentemente dal tipo, comprendere la progettazione e l'ottimizzazione di un database è essenziale per sviluppare applicazioni scalabili ed efficienti.
 
-Se hai domande specifiche o vuoi esplorare un argomento più approfondito, fammi sapere!
+> Conclusioni
+> I database sono fondamentali per la gestione e l'archiviazione dei dati. I database relazionali sono molto  
+> utilizzati per gestire dati strutturati, mentre i database NoSQL sono ottimizzati per gestire grandi quantità di 
+> dati non strutturati. Indipendentemente dal tipo, comprendere la progettazione e l'ottimizzazione di un database è
+> essenziale per sviluppare applicazioni scalabili ed efficienti.
+
+---
+
+# Comani Base
+
+Creazione di un database
+
+CREATE DATABASE nome_database;
+
+
+Eliminazione di un database
+Attenzione: elimina definitivamente il database.
+
+DROP DATABASE nome_database;
+
+
+Selezione di un database (nel caso di più database)
+USE nome_database;
+
+
+# Comandi per la gestione delle tabelle
+
+I comandi seguenti servono per creare, modificare o eliminare le tabelle.
+
+Creazione di una tabella
+
+CREATE TABLE nome_tabella (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50),
+    eta INT,
+    email VARCHAR(100)
+);
+
+Visualizzazione della struttura di una tabella
+
+DESCRIBE nome_tabella;
+
+Modifica di una tabella
+Aggiungere una colonna:
+
+ALTER TABLE nome_tabella ADD colonna_nuova VARCHAR(100);
+
+
+Modificare una colonna:
+
+ALTER TABLE nome_tabella MODIFY colonna_nuova INT;
+
+Rinominare una colonna:
+
+ALTER TABLE nome_tabella CHANGE colonna_vecchia colonna_nuova VARCHAR(50);
+
+Eliminare una colonna:
+
+ALTER TABLE nome_tabella DROP COLUMN colonna_da_rimuovere;
+
+
+Eliminazione di una tabella
+Attenzione: elimina definitivamente la tabella.
+
+DROP TABLE nome_tabella;
+
+
+# Comandi per l’inserimento, lettura, aggiornamento e cancellazione (CRUD)
+
+Inserire dati in una tabella
+
+INSERT INTO nome_tabella (colonna1, colonna2) VALUES ('valore1', 'valore2');
+
+Leggere i dati da una tabella (SELECT)
+
+SELECT * FROM nome_tabella;
+
+Solo alcune colonne:
+
+SELECT colonna1, colonna2 FROM nome_tabella;
+
+Con una condizione:
+
+SELECT * FROM nome_tabella WHERE eta > 18;
+
+Con ordinamento:
+
+SELECT * FROM nome_tabella ORDER BY nome ASC; -- ASC: crescente, DESC: decrescente
+
+Con limite di righe:
+
+SELECT * FROM nome_tabella LIMIT 5;
+
+Aggiornare dati in una tabella
+
+UPDATE nome_tabella
+SET nome = 'Mario', eta = 30
+WHERE id = 1;
+
+Eliminare dati da una tabella
+
+DELETE FROM nome_tabella WHERE id = 1;
+Nota: Senza la clausola WHERE, elimina tutti i dati:
+
+DELETE FROM nome_tabella;
+
+
+
+# Comandi per le query avanzate
+
+Filtri e condizioni
+Clausola WHERE con operatori logici:
+
+SELECT * FROM nome_tabella
+WHERE eta > 18 AND nome = 'Mario';
+
+
+## Operatori IN e BETWEEN:
+
+SELECT * FROM nome_tabella WHERE eta BETWEEN 20 AND 30;
+SELECT * FROM nome_tabella WHERE nome IN ('Mario', 'Luigi');
+
+Filtrare valori NULL:
+
+SELECT * FROM nome_tabella WHERE email IS NULL;
+SELECT * FROM nome_tabella WHERE email IS NOT NULL;
+
+## Raggruppare e aggregare dati
+
+GROUP BY e HAVING:
+
+SELECT eta, COUNT(*) AS numero_persone
+FROM nome_tabella
+GROUP BY eta
+HAVING numero_persone > 2;
+
+## Unire tabelle (JOIN)
+
+INNER JOIN:
+
+SELECT utenti.nome, ordini.totale
+FROM utenti
+INNER JOIN ordini ON utenti.id = ordini.utente_id;
+
+LEFT JOIN:
+
+SELECT utenti.nome, ordini.totale
+FROM utenti
+LEFT JOIN ordini ON utenti.id = ordini.utente_id;
+
+# Cosa è una Vista in SQL?
+
+Una vista (view) è una query salvata che restituisce un set di dati come se fosse una tabella. Tuttavia, una vista non memorizza i dati effettivi; si basa sui dati presenti nelle tabelle sottostanti.
+
+## Caratteristiche principali delle viste:
+
+- Astrattezza: Nasconde la complessità delle query. Una vista può combinare dati da più tabelle, raggrupparli o applicare filtri.
+
+- Riutilizzabilità: Può essere usata come una tabella virtuale in altre query.
+
+- Sicurezza: Puoi limitare l'accesso ai dati sensibili consentendo agli utenti di accedere solo alle viste, senza mostrare le tabelle sottostanti.
+
+## Come creare una vista
+
+CREATE VIEW nome_vista AS
+SELECT nome, eta
+FROM utenti
+WHERE eta > 18;
+
+Questa vista restituisce solo i nomi e le età degli utenti maggiorenni.
+
+Come utilizzare una vista
+Usare una vista è simile a usare una tabella:
+
+SELECT * FROM nome_vista;
+
+# Dove viene salvata una vista?
+
+Una vista non memorizza fisicamente i dati come farebbe una tabella. Invece:
+
+Viene salvata nel catalogo del database (il cosiddetto data dictionary), che memorizza la definizione della vista.
+Ogni volta che esegui una query su una vista, il database esegue la query sottostante della vista per generare i dati in tempo reale.
+In pratica, la vista è solo una "query predefinita" salvata nel database.

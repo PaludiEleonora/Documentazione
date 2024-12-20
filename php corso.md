@@ -721,6 +721,91 @@ session_destroy();
 
 # JSON
 
+**JSON è un formato testuale per rappresentare dati strutturati, derivato da JavaScript, ma utilizzabile con quasi tutti i linguaggi di programmazione.**
+
+## Caratteristiche principali
+- Leggibile da umani e macchine.
+- Leggero per la trasmissione dati.
+- Strutturato come coppie chiave-valore.
+- Standardizzato (RFC 8259).
+
+## Struttura base
+
+Tipi di dati supportati
+
+- Oggetti: Raccolte di coppie chiave-valore racchiuse in {}.
+- Array: Liste ordinate racchiuse in [].
+- Valori primitivi:
+- Stringhe ("testo")
+- Numeri (42, 3.14)
+- Booleani (true, false)
+- Null (null)
+
+Esempio semplice
+
+{
+  "nome": "Mario",
+  "eta": 30,
+  "lingue": ["italiano", "inglese"],
+  "isStudente": false,
+  "indirizzo": {
+    "citta": "Roma",
+    "CAP": "00100"
+  }
+}
+
+## Vantaggi dell'utilizzo di JSON
+
+Compatibilità multi-linguaggio: Supportato dalla maggior parte dei linguaggi di programmazione.
+Efficiente: Richiede meno spazio rispetto ad altri formati come XML.
+Leggibile: Più facile da leggere rispetto ad altri formati strutturati.
+
+## Funzioni principali in PHP per JSON
+PHP fornisce due funzioni principali:
+
+json_encode(): Per convertire un array o un oggetto PHP in una stringa JSON.
+json_decode(): Per convertire una stringa JSON in un array o oggetto PHP.
+
+## Convertire array PHP in JSON
+
+<?php
+$data = [
+    "nome" => "Mario",
+    "eta" => 30,
+    "lingue" => ["italiano", "inglese"]
+];
+
+$json = json_encode($data);
+echo $json;
+// Output: {"nome":"Mario","eta":30,"lingue":["italiano","inglese"]}
+?>
+
+## Convertire JSON in oggetto PHP
+
+
+$json = '{"nome":"Mario","eta":30,"lingue":["italiano","inglese"]}';
+
+$data = json_decode($json); // Senza `true`, restituisce un oggetto
+echo $data->nome;
+// Output: Mario
+?>
+
+## Funzioni principali 
+
+- json_encode(): Per convertire un array o un oggetto PHP in una stringa JSON.
+- json_decode(): Per convertire una stringa JSON in un array o oggetto PHP.
+- JSON_PRETTY_PRINT: Indenta il JSON per renderlo leggibile.
+- JSON_UNESCAPED_SLASHES: Non escapa le barre (/).
+- JSON_UNESCAPED_UNICODE: Non escapa i caratteri Unicode.
+- JSON_NUMERIC_CHECK: Converte stringhe numeriche in numeri.
+
+## Gestione di errori
+Principali errori JSON
+Ecco alcune costanti di errore che json_last_error() può restituire:
+
+JSON_ERROR_NONE: Nessun errore.
+JSON_ERROR_SYNTAX: Errore di sintassi.
+JSON_ERROR_UTF8: Problemi con la codifica UTF-8.
 
 
 

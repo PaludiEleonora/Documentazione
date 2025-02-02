@@ -11,12 +11,26 @@ Per raggiungere il progetto bisogna andare su **localhost** oppure su **127.0.0.
 
 ---
 
-# Sintassi php
+# Tecniche di Stampa in PHP
 
-echo ==> Mostra output (1 o +)
+echo, print - Per l'output di base (stringhe, variabili, ecc.)
 
-print ==> Mostra output (1). Print restituisce 1  
+print_r(), var_dump() - Per il debug e la visualizzazione di variabili complesse (array, oggetti)
 
+printf(), sprintf() - Per formattare e stampare variabili
+
+var_export() - Per stampare una rappresentazione leggibile di una variabile
+
+| Funzione      | Supporta più argomenti? | Restituisce valore? | Usa principale                           |
+|---------------|-------------------------|---------------------|------------------------------------------|
+| `echo`        | ✅ Sì (separati da virgole)  | ❌ No               | Stampa veloce e generica                 |
+| `print`       | ❌ No                    | ✅ Sì (sempre `1`)   | Quasi mai usato, meno efficiente di `echo`|
+| `print_r()`   | ❌ No                    | ✅ Sì (se `true` come 2° parametro) | Debug di array e oggetti                |
+| `var_dump()`  | ❌ No                    | ❌ No               | Debug avanzato di variabili (tipo e valore) |
+
+---
+
+#   Sintassi PHP
 isset ==> Sarebbe If set => Serve per sapere se è stato settato qualcosa
 
 $_SERVER['PHP_SELF'] ==> ricarica la pagina php
@@ -31,6 +45,16 @@ $_SERVER['PHP_SELF'] ==> ricarica la pagina php
 ```
 
 ---
+## Cast 
+
+ Con il termine CAST, ci riferiamo alla conversione di un tipo di dato in un altro.
+
+str_replace() è una funzione che sostituisce parti di una stringa con altre. Non effettua un vero e proprio cast, ma manipola il contenuto testuale.
+
+$valore = "123.45";
+$intVal = (int) $valore;   // Convertito in intero (123)
+$floatVal = (float) $valore; // Convertito in float (123.45)
+$stringVal = (string) $valore; // Convertito in stringa
 
 # Funzioni su stringhe
 
@@ -40,7 +64,10 @@ Serve per calcolare la lunghezza di una stringa.
 
  ```php
     echo strlen($stringa)
+
   ```
+##strval()
+##number_format()
 
 ## strtolower();
 

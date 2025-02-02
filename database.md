@@ -2,6 +2,31 @@
 
 Un database è una raccolta organizzata di dati, memorizzata e accessibile in modo che possano essere facilmente gestiti, modificati e recuperati. I database sono utilizzati per archiviare informazioni in modo strutturato e permettere a software e applicazioni di interagire con i dati.
 
+---
+
+# Transazioni
+
+Una transazione è un insieme di operazioni che vengono eseguite come un'unità atomica, il che significa che o tutte le operazioni hanno successo o nessuna di esse viene eseguita. Le transazioni sono particolarmente utili per garantire la consistenza dei dati in caso di errori o interruzioni. Le transazioni supportano i seguenti principi, noti come ACID:
+
+# Proprietà fondamentali per un database
+
+- Atomicity (Atomicità)
+Una transazione è considerata un'unità indivisibile di lavoro. O viene completata interamente, oppure, in caso di errore, non produce alcun effetto.
+Esempio: Se trasferisci soldi tra due conti, entrambe le operazioni (diminuzione di un conto e aumento dell'altro) devono avvenire insieme o non avvenire affatto.
+
+- Consistency (Coerenza)
+Una transazione deve portare il database da uno stato valido a un altro stato valido, rispettando tutte le regole definite (come vincoli di integrità, trigger, ecc.).
+Esempio: Se un account non può avere un saldo negativo, una transazione che lo porterebbe in uno stato incoerente non viene completata.
+
+- Isolation (Isolamento)
+Ogni transazione deve essere eseguita come se fosse l'unica attiva nel database, indipendentemente dalle altre transazioni in corso. Questo evita che i dati vengano modificati da altre transazioni nel mezzo del processo.
+Esempio: Se due persone leggono o scrivono nello stesso record, il risultato finale deve essere lo stesso come se le transazioni fossero avvenute una dopo l'altra.
+
+- Durability (Durabilità)
+Una volta completata una transazione, i suoi effetti devono essere permanenti, anche in caso di crash del sistema o interruzioni.
+Esempio: Dopo aver confermato un pagamento, i dati relativi al pagamento rimangono nel database anche se il server si spegne subito dopo.
+
+
 # Tipi di Database
 
 ## Database Relazionale (RDBMS):
@@ -57,18 +82,6 @@ Normalizzazione del Database
 La normalizzazione è il processo di organizzazione dei dati in modo da ridurre la ridondanza e migliorare l'integrità dei dati. Ci sono diverse "forme normali", che sono regole per strutturare i dati in modo efficace. La normalizzazione porta alla creazione di tabelle separate per categorie di dati simili e alla definizione di chiavi esterne per collegarle.
 
 ---
-
-# Transazioni
-
-Una transazione è un insieme di operazioni che vengono eseguite come un'unità atomica, il che significa che o tutte le operazioni hanno successo o nessuna di esse viene eseguita. Le transazioni sono particolarmente utili per garantire la consistenza dei dati in caso di errori o interruzioni. Le transazioni supportano i seguenti principi, noti come ACID:
-
-- Atomicità: Tutte le operazioni della transazione sono completate o nessuna lo è.
-
-- Coerenza: Il database passa da uno stato coerente a un altro stato coerente.
-
-- Isolamento: Le operazioni di una transazione non sono visibili ad altre transazioni fino a quando non sono completate.
-
-- Durabilità: I cambiamenti apportati dal completamento di una transazione sono permanenti.
 
 # Tipi di Database NoSQL
 
